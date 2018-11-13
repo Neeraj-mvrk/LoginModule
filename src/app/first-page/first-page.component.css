@@ -1,0 +1,7 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+html, body {
+  height: 100%;
+  overflow: auto;
+  background-image: url("https://img.elo7.com.br/product/original/1B516DB/painel-sublimado-3-0x2-0-futebol-01-ilhos-painel-em-tecido-sublimacao.jpg");
+  background-size: cover;
+}

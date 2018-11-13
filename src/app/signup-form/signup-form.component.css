@@ -1,0 +1,30 @@
+/* @import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
+.ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948;
+  }
+
+  .ng-invalid:not(form)  {
+    border-left: 5px solid #a94442;
+  } */
+  @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-image: url("https://premierleague-static-files.s3.amazonaws.com/premierleague/photo/2017/06/22/86d373fa-685e-4d47-92d7-bde509263a89/Spurs_Wembley-1-.jpg");
+  background-size: cover;
+}
+mat-card {
+    max-width: 400px;
+    margin: 2em auto;
+    text-align: center;
+  }
+  .full-width-input {
+    width: 100%;
+    height:100px;
+  }
+  .mat-select-content{
+    width:100%;
+    background-color: rgb(230, 247, 255);
+    font-size: 10px;
+}

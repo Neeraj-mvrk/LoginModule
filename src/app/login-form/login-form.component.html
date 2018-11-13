@@ -1,0 +1,76 @@
+<!-- <div class="container">
+    <h1>Login Form</h1>
+    <form #loginForm = "ngForm" (ngSubmit) = "onSubmit(loginForm.value); loginForm.resetForm()" >
+      <div class="form-group">
+        <label for="email">EMail Id</label>
+        <input type="text" class="form-control" id="lemail" required [(ngModel)]= model.email name="email" #lemail="ngModel" placeholder="Please Enter Your Email Adsress" >
+        <div [hidden]="lemail.valid || lemail.pristine || lemail.untouched"
+        class="alert alert-danger">
+        Email is required
+   </div>
+      </div>
+      <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="lpassword" required [(ngModel)]= model.hash_password name="hash_password" #lpassword="ngModel" placeholder="Please Enter Your Password" >
+          <div [hidden]="lpassword.valid || lpassword.pristine || lpassword.untouched"
+          class="alert alert-danger">
+          Password is required
+     </div>
+        </div>
+        <button type="submit" class="btn btn-success" [disabled]=!loginForm.form.valid >Submit</button>
+      </form>
+      </div>
+    <a routerLink="/signup-form">Not a User. SignUp here</a> -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+      <div>
+          <h2 class="heading">You Belong Here!</h2>
+        <mat-card>
+            <mat-card-title>
+                Sign In
+            </mat-card-title>
+          <mat-card-content>
+              <form  [formGroup]="loginForm"  (ngSubmit)="onSubmit(loginForm)"  class="example-form" >
+                                  <!-- <p style="font-size: 30px;">Sign In</p> -->
+                                  <!-- <mat-form-field  class="full-width-input" >
+                                  <input matInput placeholder="EMail " id="email"  [(ngModel)]="model.email" formControlName="email" required>
+                                  <mat-error *ngIf="isFieldInvalid('email')">
+                                  Please inform your email
+                                  </mat-error>
+                                  </mat-form-field> -->
+
+                                  <mat-form-field class="full-width-input">
+                                    <input matInput type="email" placeholder="Email" formControlName="email" required>
+                                    <mat-error *ngFor="let validation of loginForm_validation_messages.email">
+                                      <mat-error class="error-message" *ngIf="loginForm.get('email').hasError(validation.type) && (loginForm.get('email').dirty || loginForm.get('email').touched)">{{validation.message}}</mat-error>
+                                    </mat-error>
+                                  </mat-form-field>
+
+                                  <mat-form-field class="full-width-input">
+                                    <input matInput type="password" placeholder="Password" formControlName="hash_password" required>
+                                    <mat-error *ngFor="let validation of loginForm_validation_messages.hash_password">
+                                      <mat-error class="error-message" *ngIf="loginForm.get('hash_password').hasError(validation.type) && (loginForm.get('hash_password').dirty || loginForm.get('hash_password').touched)">{{validation.message}}</mat-error>
+                                    </mat-error>
+                                  </mat-form-field>
+
+                                  <!-- <mat-form-field  class="full-width-input">
+                                  <input matInput placeholder="Password " id="password"  [(ngModel)]="model.hash_password" formControlName="hash_password" required>
+                                  <mat-error *ngIf="isFieldInvalid('hash_password')">
+                                  Please inform your Password
+                                  </mat-error>
+                                  </mat-form-field> -->
+
+                                  <button class="submit-btn" color="primary" mat-raised-button type="submit" [disabled]="!loginForm.valid">
+                                      Login
+                                    </button>
+                                     <!-- <button class="fa fa-google-plus" color="primary" mat-raised-button type="submit" (click)="googleSignin();">
+                                        Google+
+                                      </button> -->
+                                   <a href="/auth/google" class="btn btn-danger"><span class="fa fa-google-plus"></span> Google</a>
+                                    <div><a routerLink="/signup-form">Not a User? SignUp here</a></div>
+
+              </form>
+       </mat-card-content>
+  </mat-card>
+
+  </div>
